@@ -10,8 +10,17 @@ unique([1, 1, 2, 3, 3]) => [1, 2, 3]
 *******************************************************************************/
 
 function unique(array) {
-  // your code here...
+  var uniqueA = [];
 
+  for(var i = 0; i < array.length; i += 1) {
+    var ele = array[i];
+
+    if(uniqueA.indexOf(ele) === -1) {
+      uniqueA.push(ele);
+    }
+  }
+
+  return uniqueA;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/

@@ -10,8 +10,13 @@ stringRange(3, 20, 5) => '381318'
 *******************************************************************************/
 
 function stringRange(min, max, step) {
-  // your code here...
+  var str = '';
 
+  for (var i = min; i <= max; i += step) {
+    str += i;
+  }
+
+  return str;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/

@@ -9,8 +9,13 @@ range(4,2) => []
 *******************************************************************************/
 
 function range(start, end) {
-  // your code here...
+  var array = [];
 
+  for(var i = start; i <= end; i += 1) {
+    array.push(i);
+  }
+
+  return array;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/
