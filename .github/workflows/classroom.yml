@@ -11,4 +11,4 @@ jobs:
       - uses: education/autograding@v1
         id: autograder
       - run: |
-          curl -X PUT 'https://hooks.zapier.com/hooks/catch/912032/bsc6bg8/silent/' -H 'Content-Type: application/json' -d "{\"student username\":\"${{ github.actor }}\",\"repo\":\"${{ github.repository }}\",\"score\":\"${{ steps.autograder.outputs.Points }}\",\"outputs\":\"${{ toJSON(steps.autograder.outputs) }}\"}"
+          curl -X PUT 'https://hooks.zapier.com/hooks/catch/912032/bsc6bg8/silent/' -H 'Content-Type: application/json' -d '{"student username":"${{ github.actor }}","repo":"${{ github.repository }}","score":"${{ steps.autograder.outputs.Points }}"}'
