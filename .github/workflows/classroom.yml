@@ -11,4 +11,4 @@ jobs:
         token: ${{ secrets.PAT }}
       - uses: education/autograding@v1
         id: autograder
-      - run: | curl -X PUT -H 'Content-type: application/json' -d '{"student username":"stuff","repo":"stuff","score":"stuff","outputs":"stuff"}' 'https://hooks.zapier.com/hooks/catch/912032/bsc6bg8/silent/'
+      - run: | curl -X PUT -H 'Content-Type: application/json' -d '{"student username":"stuff","repo":"stuff","score":"stuff","outputs":"stuff"}' 'https://hooks.zapier.com/hooks/catch/912032/bsc6bg8/silent/'
