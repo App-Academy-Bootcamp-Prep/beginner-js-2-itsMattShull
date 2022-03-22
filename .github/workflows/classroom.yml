@@ -1,0 +1,16 @@
+name: GitHub Classroom Workflow
+
+on: [push]
+
+jobs:
+  build:
+    name: Autograding
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        token: ${{ secrets.PAT }}
+      - uses: education/autograding@v1
+        id: autograder
+      - run: curl PUT "https://hooks.zapier.com/hooks/catch/912032/bsc6bg8/silent/" \
+          -H "Content-Type: application/json" \
+          -d "{\"student username\":\"${{ github.actor }}\",\"repo\":\"${{ github.repository }}\",\"score\":\"${{ steps.autograder.outputs.Points }}\"}" 
