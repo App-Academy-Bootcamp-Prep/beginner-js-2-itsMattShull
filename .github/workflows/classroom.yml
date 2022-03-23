@@ -10,6 +10,6 @@ jobs:
       - uses: actions/checkout@v2
       - uses: education/autograding@v1
         id: autograder
-      run: |
+      - run: |
           curl -X PUT '${{ secrets.RESULTS_WEBHOOK }}' -H 'Content-Type: application/json' -d '{"student username":"${{ github.actor }}","repo":"${{ github.repository }}","score":"${{ steps.autograder.outputs.Points }}","outputs":"${{ steps.autograder.outputs }}"}'
-      if: always()
+      - if: always()
