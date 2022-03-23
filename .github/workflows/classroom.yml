@@ -7,6 +7,7 @@ jobs:
     name: Autograding
     runs-on: ubuntu-latest
     steps:
+      if: always()
       - uses: actions/checkout@v2
       - uses: education/autograding@v1
         id: autograder
