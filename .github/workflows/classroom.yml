@@ -7,9 +7,9 @@ jobs:
     name: Autograding
     runs-on: ubuntu-latest
     steps:
-      if: always()
       - uses: actions/checkout@v2
       - uses: education/autograding@v1
         id: autograder
       - run: |
           curl -X PUT '${{ secrets.RESULTS_WEBHOOK }}' -H 'Content-Type: application/json' -d '{"student username":"${{ github.actor }}","repo":"${{ github.repository }}","score":"${{ steps.autograder.outputs.Points }}","outputs":"${{ steps.autograder.outputs }}"}'
+      - if: always()
