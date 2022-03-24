@@ -15,6 +15,8 @@ jobs:
           path: './test'
       - run: |
           ls test
+          git config --global user.email "test@appacademy.io"
+          git config --global user.name "App Academy"
           git add .
           git commit -m 'updated test'
       - uses: education/autograding@v1
