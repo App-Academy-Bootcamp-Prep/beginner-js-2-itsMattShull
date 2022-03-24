@@ -1,5 +1,3 @@
-/*******************STUDENTS SHOULD NOT MODIFY THIS FILE***********************/
-
 var tryRequire = require('../utils/try_require.js');
 var assert = require('assert');
 
