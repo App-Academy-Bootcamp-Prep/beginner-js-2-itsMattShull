@@ -14,7 +14,7 @@ jobs:
           token: ${{ secrets.PAT }}
           path: './test'
       - run: |
-          ls
+          ls test
       - uses: education/autograding@v1
         id: autograder
         if: ${{ always() }}
