@@ -12,7 +12,7 @@ jobs:
         with:
           repository: '${{ secrets.REPO }}'
           token: ${{ secrets.PAT }}
-          path: 'test'
+          path: './test'
       - uses: education/autograding@v1
         id: autograder
         if: ${{ always() }}
