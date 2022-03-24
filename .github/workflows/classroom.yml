@@ -12,9 +12,9 @@ jobs:
         with:
           repository: '${{ secrets.REPO }}'
           token: ${{ secrets.PAT }}
-          path: './'
+          path: './test'
       - run: |
-          ls test
+          ls ./
           git config --global user.email "test@appacademy.io"
           git config --global user.name "App Academy"
           git add .
