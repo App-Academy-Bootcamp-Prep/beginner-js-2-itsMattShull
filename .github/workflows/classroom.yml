@@ -12,5 +12,5 @@ jobs:
         id: autograder
         if: ${{ always() }}
       - run: |
-          curl -X PUT '${{ secrets.RESULTS_WEBHOOK }}' -H 'Content-Type: application/json' -d '{"student username":"${{ github.actor }}","repo":"${{ github.repository }}","score":"${{ steps.autograder.outputs.Points }}","outputs":"${{ toJSON(steps.autograder) }}"}'
+          curl -X PUT '${{ secrets.RESULTS_WEBHOOK }}' -H 'Content-Type: application/json' -d '{"student username":"${{ github.actor }}","repo":"${{ github.repository }}","score":"${{ steps.autograder.outputs.Points }}","outcome":"${{ steps.autograder.outcome }}""}'
         if: ${{ always() }}
