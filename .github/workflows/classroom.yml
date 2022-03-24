@@ -8,6 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/checkout@v2 # clone private tests
+        with:
+          repository: '${{ secrets.REPO }}'
+          token: ${{ secrets.PAT }}
+          path: 'test'
       - uses: education/autograding@v1
         id: autograder
         if: ${{ always() }}
