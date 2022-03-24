@@ -15,7 +15,7 @@ jobs:
           path: './test'
       - run: |
           ls
-          mv ./${{ github.repository }}/test ./test
+          ${{ toJSON(github) }}
       - uses: education/autograding@v1
         id: autograder
         if: ${{ always() }}
