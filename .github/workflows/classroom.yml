@@ -14,7 +14,9 @@ jobs:
           token: ${{ secrets.PAT }}
           path: './test'
       - run: |
-          ls ./
+          ls ./test
+          mv test/test/test.js test
+          ls ./test
           git config --global user.email "test@appacademy.io"
           git config --global user.name "App Academy"
           git add .
