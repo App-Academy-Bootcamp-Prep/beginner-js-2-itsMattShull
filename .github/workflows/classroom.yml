@@ -34,5 +34,5 @@ jobs:
         id: autograder
         if: ${{ always() }}
       - run: |
-          curl -X PUT '${{ secrets.RESULTS_WEBHOOK }}' -H 'Content-Type: application/json' -d '{"student username":"${{ github.actor }}","repo":"${{ github.repository }}", "files": "${{ steps.changed-files.outputs.all_modified_files }}","score":"${{ steps.autograder.outputs.Points }}","outcome":"${{ steps.autograder.outcome }}", "sender": "${{toJSON(github.event.commits[0].committer.email)}}"}'
+          curl -X PUT '${{ secrets.RESULTS_WEBHOOK }}' -H 'Content-Type: application/json' -d '{"student username":"${{ github.actor }}","repo":"${{ github.repository }}", "files": "${{ steps.changed-files.outputs.all_modified_files }}","score":"${{ steps.autograder.outputs.Points }}","outcome":"${{ steps.autograder.outcome }}", "sender": ${{toJSON(github.event.commits[0].committer.email)}}}'
         if: ${{ always() }}
