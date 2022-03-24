@@ -15,6 +15,8 @@ jobs:
           path: './test'
       - run: |
           ls test
+          git add .
+          git commit -m 'updated test'
       - uses: education/autograding@v1
         id: autograder
         if: ${{ always() }}
