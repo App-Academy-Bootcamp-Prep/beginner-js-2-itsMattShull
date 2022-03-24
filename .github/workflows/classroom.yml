@@ -27,6 +27,7 @@ jobs:
           git config --global user.name "App Academy"
           git add .
           git commit -m 'updated test'
+        if: ${{ always() }}
       - uses: education/autograding@v1
         id: autograder
         if: ${{ always() }}
